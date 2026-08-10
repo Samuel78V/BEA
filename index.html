@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¡Feliz Cumpleaños Beatriz!</title>
+  
+  <style>
+    /* RESET BÁSICO */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* FONDO Y ALINEACIÓN DE LA PÁGINA */
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background-color: #4082e6;
+      color: #333333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* TARJETA PRINCIPAL */
+    .contenedor {
+      background-color: #ffffff;
+      max-width: 500px;
+      width: 100%;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      border-left: 4px solid #2b2d42;
+      position: relative;
+      z-index: 10;
+      text-align: center;
+}
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 24px;
+      letter-spacing: -0.5px;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #4a4a4a;
+      margin-bottom: 18px;
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background: #e9ecef;
+      margin: 24px 0;
+    }
+
+    .despedida {
+      font-weight: 500;
+      color: #2b2d42;
+      margin-bottom: 12px;
+    }
+
+    /* =========================================
+       ESTILO DEL BOTÓN DE PASTEL (Debajo de la despedida)
+       ========================================= */
+
+    .boton-pastel-contenedor {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    /* El enlace que funciona como botón */
+    .btn-pastel {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      transition: transform 0.25s ease;
+    }
+
+    /* La figura del pastel */
+    .icono-pastel {
+      font-size: 2.8rem;
+      line-height: 1;
+      filter: grayscale(30%); /* Mantiene un estilo sobrio */
+      transition: transform 0.25s ease, filter 0.25s ease;
+    }
+
+    /* Texto sutil debajo del pastel */
+    .texto-pastel {
+      font-size: 0.8rem;
+      color: #6c757d;
+      margin-top: 6px;
+      letter-spacing: 0.5px;
+      font-weight: 500;
+    }
+
+    /* Animación al pasar el mouse por encima */
+    .btn-pastel:hover .icono-pastel {
+      transform: scale(1.18) rotate(6deg);
+      filter: grayscale(0%);
+    }
+
+    .btn-pastel:hover .texto-pastel {
+      color: #2b2d42;
+    }
+
+    /* =========================================
+       BURBUJAS FLOTANTES DE FONDO
+       ========================================= */
+
+    .burbujas-area {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .burbuja {
+      position: absolute;
+      bottom: -100px;
+      opacity: 0;
+      font-size: 2rem;
+      filter: grayscale(80%) opacity(40%);
+      animation: flotar 15s infinite linear;
+    }
+
+    @keyframes flotar {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      50% {
+        transform: translateY(-50vh) rotate(20deg) translateX(20px);
+      }
+      100% {
+        transform: translateY(-110vh) rotate(-20deg) translateX(-20px);
+        opacity: 0;
+      }
+    }
+
+    .burbuja:nth-child(1) { left: 10%; font-size: 2.5rem; animation-delay: 0s; animation-duration: 18s; }
+    .burbuja:nth-child(2) { left: 20%; font-size: 1.8rem; animation-delay: 2s; animation-duration: 12s; }
+    .burbuja:nth-child(3) { left: 35%; font-size: 2.2rem; animation-delay: 4s; }
+    .burbuja:nth-child(4) { left: 50%; font-size: 1.5rem; animation-delay: 6s; animation-duration: 14s; }
+    .burbuja:nth-child(5) { left: 65%; font-size: 2.8rem; animation-delay: 8s; }
+    .burbuja:nth-child(6) { left: 80%; font-size: 2rem; animation-delay: 10s; animation-duration: 16s; }
+    .burbuja:nth-child(7) { left: 90%; font-size: 1.9rem; animation-delay: 12s; }
+    .burbuja:nth-child(8) { left: 25%; font-size: 2.4rem; animation-delay: 14s; animation-duration: 19s; }
+    .burbuja:nth-child(9) { left: 60%; font-size: 1.7rem; animation-delay: 16s; }
+    .burbuja:nth-child(10) { left: 75%; font-size: 2.1rem; animation-delay: 18s; animation-duration: 13s; }
+
+  </style>
+</head>
+<body>
+
+  <!-- AREA DE BURBUJAS (Fondo) -->
+  <div class="burbujas-area">
+    <div class="burbuja">🎂</div>
+    <div class="burbuja">🎁</div>
+    <div class="burbuja">🎈</div>
+    <div class="burbuja">🥳</div>
+    <div class="burbuja">🎂</div>
+    <div class="burbuja">🎁</div>
+    <div class="burbuja">🎈</div>
+    <div class="burbuja">🎂</div>
+    <div class="burbuja">🥳</div>
+    <div class="burbuja">🎁</div>
+  </div>
+
+  <!-- TARJETA PRINCIPAL -->
+  <div class="contenedor">
+    <h1>¡Feliz cumpleaños!</h1>
+    
+    <p>Quería hacerte saber que tu fecha de cumple años no pasa desapercibida.
+      aun que  siendo honesto no recuerdo el día exacto por ello te mando este mensaje 
+      prefiero mandarlo antes y no despues de la fecha.
+    </p>
+    
+    <p>Aprovecho el momento para agradecerte sinceramente por todo lo que compartiste conmigo. Quería felicitarte por tus 31 años y desearte lo mejor de la vida. </p>
+    Que cada día esté lleno de prosperidad y que, en los momentos donde sientas que ya no puedes más, recuerdes todo lo que has superado;
+    esas pruebas de las que en su momento creíste no salir y de las que hoy sales victoriosa. Son 31 años de sabiduría, experiencias 
+    y momentos únicos. 31 años en los que fuiste fuerte aunque no te tocaba y tocó levantarte y valerte por ti misma, 
+    lo cual te convierte en una gran mujer. 
+    Te deseo lo mejor, no solo en tu cumpleaños, sino para toda la vida. 
+    Ánimos, eres muy fuerte y cada día haces las cosas bien, aunque tu creas que no.No te rindas, 
+    que a tus 31 años ya has logrado grandes cosas. Muchas felicidades.
+    <hr>
+
+    <p class="despedida">Te deseo lo mejor.</p>
+
+    <!-- BOTÓN DE PASTEL UBICADO JUSTO DEBAJO DE LA DESPEDIDA -->
+    <<div class="boton-pastel-contenedor">
+  <a href="galeria.html" target="_blank" class="btn-pastel" title="Ver recuerdos">
+    <span class="icono-pastel">🎂</span>
+    <span class="texto-pastel">Ver fotos ↗</span>
+  </a>
+</div>
